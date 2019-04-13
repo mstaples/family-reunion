@@ -30,9 +30,24 @@ class ReservationController extends Controller
         $this->middleware('auth');
     }
 
+    public function contribute(Request $request)
+    {
+        $amount = $request->input('contribution');
+        $user = Auth::user();
+        $rsvp = $user->rsvp()->getResults();
+        $rsvp->has_paid = $amount;
+        $rsvp->save();
+
+        return view('index', [
+            'user' => Auth::user(),
+            'hash' => 'contribute'
+        ]);
+    }
+
     public function rsvp(Request $request)
     {
         $rsvpType = $request->input('private') == "true" ? true : false;
+        $nights = 0;
         $save = true;
         $days = [];
         $conflicts = [];
@@ -44,6 +59,7 @@ class ReservationController extends Controller
             if (!$reserve) {
                 continue;
             }
+            $nights++;
             $available = $this->getAvailability($rsvpType, $day);
             $conflicts[$day]['availability'] = $available;
             if (!$available) {
@@ -58,6 +74,7 @@ class ReservationController extends Controller
             $user = Auth::user();
             $rsvp = $user->rsvp()->getResults();
             $rsvp->days = $days;
+            $rsvp->nights = $nights;
             $rsvp->private = $rsvpType;
             $rsvp->pet = $request->input('pet') == "true" ? true : false;
             $rsvp->has_rsvp = true;

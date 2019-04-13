@@ -249,7 +249,10 @@
 				});
 
 		}
-
+	$( "#split_button" ).click(function() {
+		$( "#split_button" ).css('display', 'none');
+		$( "#display_split" ).css('display', 'inline');
+	});
 })(jQuery);
 
 // Open images in new tab

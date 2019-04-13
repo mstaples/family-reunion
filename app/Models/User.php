@@ -42,4 +42,9 @@ class User extends Authenticatable
         return $this->hasOne('App\Model\Rsvp');
     }
 
+    public function notification()
+    {
+        return $this->hasOne('App\Model\Notification');
+    }
+
 }

@@ -23,6 +23,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('index', [ 'user' => Auth::user(), 'conflicts' => [], 'hash' => 'home' ]);
+        return view('index', [ 'user' => Auth::user(), 'hasConflicts' => false, 'conflicts' => [], 'hash' => 'home' ]);
     }
 }

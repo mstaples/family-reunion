@@ -22,3 +22,6 @@ Route::get('home', 'HomeController@index')->name('home')->middleware('auth');
 
 Route::post('rsvp', 'ReservationController@rsvp')->name('rsvp')->middleware('auth');
 
+Route::post('notification', 'NotificationController@notification')->name('notification')->middleware('auth');
+
+Route::post('contribute', 'ReservationController@contribute')->name('contribute')->middleware('auth');

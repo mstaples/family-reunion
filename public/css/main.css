@@ -2151,7 +2151,27 @@ input, select, textarea {
 .error {
 	border: solid red 2px;
 	border-radius: 15px;
+	padding: 10px;
 	color: darkred;
+	background-color: rgba(251, 29, 29, 0.14);
+}
+
+.success {
+	border: solid green 2px;
+	border-radius: 15px;
+	padding: 10px;
+	color: darkgreen;
+	background-color: rgba(152, 251, 152, 0.14);
+}
+
+.success p {
+	margin-bottom: 0.1em;
+}
+
+/* Button Styles */
+
+.small-button {
+
 }
 
 /* Footer */

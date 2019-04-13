@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Model\Notification;
 use App\Model\Rsvp;
 use App\Model\User;
 use App\Http\Controllers\Controller;
@@ -65,15 +66,20 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $rsvp = new Rsvp();
+        $notification = new Notification();
 
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'phone' => $data['phone'],
             'password' => Hash::make($data['password']),
         ]);
 
         $rsvp->user()->associate($user);
         $rsvp->save();
+
+        $notification->user()->associate($user);
+        $notification->save();
 
         return $user;
     }

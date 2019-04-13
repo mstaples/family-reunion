@@ -23,6 +23,7 @@ class CreateRsvpsTable extends Migration
             $table->boolean('has_rsvp')->default(false);
             $table->integer('has_paid')->default(0);
             $table->integer('balance')->default(0);
+            $table->integer('nights')->default(0);
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

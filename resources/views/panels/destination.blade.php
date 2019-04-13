@@ -2,7 +2,7 @@
     <h2>Destination</h2>
 </header>
 <p>
-    Views of the ocean, eagles, and all the way to the Olympic mountains on a clear day. There are both gas patio heaters and a wood fire/wood provided and ample seating on the patio. Chef's kitchen and large dining area make it easy to enjoy a home away from home. Friendly doggos welcome to join the reunion. Three private bedrooms and two shared, for a total of 12 sleeping spots.
+    Views of the ocean, eagles, and all the way to the Olympic mountains on a clear day. There are both gas patio heaters and a wood fire and ample seating on the patio. Chef's kitchen and large dining area make it easy to enjoy a home away from home. Friendly doggos welcome to join the reunion. Three private bedrooms and two shared, for a total of 12 sleeping spots.
 </p>
 <section>
     <div class="row">

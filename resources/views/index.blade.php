@@ -21,12 +21,12 @@
 
         <!-- RSVP -->
         <article id="rsvp" class="panel">
-            @include('panels.rsvp', [ 'user' => $user ])
+            @include('panels.rsvp', [ 'user' => $user, 'hasConflicts' => false ])
         </article>
 
         <!-- Contribute -->
         <article id="contribute" class="panel">
-            @include('panels.contribute')
+            @include('panels.contribute', [ 'message' => "" ])
         </article>
 
         <!-- Notifications -->
